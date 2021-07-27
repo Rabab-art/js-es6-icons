@@ -1,9 +1,3 @@
-// {
-//     name: 'cat',
-//     prefix: 'fa-',
-//     type: 'animal',
-//     family: 'fas',
-// // },
 const icons = [
     {
         name: 'cat',
@@ -108,39 +102,3 @@ const icons = [
         family: 'fab',
     },
 ];
-console.log(icons);
-/*FUNCTION*/
-const renderIcons = (arr, targerElement) => {
-
-    let iconsTemplate = '';
-    arr.forEach((icon, index) => {
-
-        /*GESTIRE L'OFFSET*/
-        let hasOffset = '';
-        if (index == 0 || index % 5 == 0) {
-            hasOffset = ' offset-md-1'
-        };
-
-        iconsTemplate += `
-        <div class="col col-sm-4 col-md-2 ${hasOffset}">
-            <div class="card">
-                <div class="card-body">
-                    <i class="${icon.family} ${icon.prefix}${icon.name} fa-2x "></i>
-                    <h2 class="h6">${icon.name.toUpperCase()}</h2>
-                </div>
-            </div>
-        </div>
-        `;
-
-    });
-    targerElement.innerHTML = iconsTemplate;
-};
-
-
-
-
-
-//# STAMPO IN PAGINA #//
-
-const cardsSection = document.querySelector('#icons .row');
-renderIcons(icons, cardsSection);
